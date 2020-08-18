@@ -1,0 +1,50 @@
+/code/zx/workspace/projec/code/zx/workspace/projec
+ ├──a                     ├──x
+ │  ├──m                  │  ├──10.txt
+ │  │  ├──x               │  ├──100.txt
+ │  │  │  ├──10.txt       │  ├──101.txt
+ │  │  │  ├──100.txt      │  ├──102.txt
+ │  │  │  ├──101.txt      │  ├──103.txt
+ │  │  │  ├──102.txt      │  ├──104.txt
+ │  │  │  ├──103.txt      │  ├──105.txt
+ │  │  │  ├──104.txt      │  ├──106.txt
+ │  │  │  ├──105.txt      │  ├──107.txt
+ │  │  │  ├──106.txt      │  ├──108.txt
+ │  │  │  ├──107.txt      │  ├──109.txt
+ │  │  │  ├──108.txt      │  ├──11.txt
+ │  │  │  ├──109.txt      │  ├──110.txt
+ │  │  │  ├──11.txt       │  ├──111.txt
+ │  │  │  ├──110.txt      │  ├──112.txt
+ │  │  │  ├──111.txt      │  ├──113.txt
+ │  │  │  ├──112.txt      │  ├──114.txt
+ │  │  │  ├──113.txt      │  ├──115.txt
+ │  │  │  ├──114.txt      │  ├──116.txt
+ │  │  │  ├──115.txt      │  ├──117.txt
+ │  │  │  ├──116.txt      │  ├──118.txt
+ │  │  │  ├──117.txt      │  ├──119.txt
+ │  │  │  ├──118.txt      │  ├──12.txt
+ │  │  │  ├──119.txt      │  ├──120.txt
+ │  │  │  ├──12.txt       │  ├──13.txt
+ │  │  │  ├──120.txt      │  ├──14.txt
+ │  │  │  ├──13.txt       │  ├──15.txt
+ │  │  │  ├──14.txt       │  ├──16.txt
+ │  │  │  ├──15.txt       │  ├──17.txt
+ │  │  │  ├──16.txt       │  ├──18.txt
+ │  │  │  └──93 unlisted  │  ├──19.txt
+ │  │  └──y               │  ├──2.txt
+ │  │     └──b.txt        │  ├──20.txt
+ │  └──n                  │  ├──21.txt
+ │     ├──x               │  ├──22.txt
+ │     └──y               │  ├──23.txt
+ ├──master                │  ├──24.txt
+ │  ├──file_contents.mast │  ├──25.txt
+ │  ├──file_fuzzy.master  │  ├──26.txt
+ │  ├──folder_pane_closed │  ├──27.txt
+ │  ├──folder_pane_open.m │  ├──28.txt
+ │  ├──initial.master     │  ├──29.txt
+ │  ├──page_down.master   │  ├──3.txt
+ │  ├──page_up.master     │  └──78 unlisted
+ │  └──print_path.master  └──y
+ └──script.sh                └──b.txt
+ Hit enter to go up, ? for help, or …ers to search
+                                       h:n  gi:y

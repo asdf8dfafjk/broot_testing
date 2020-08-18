@@ -1,0 +1,50 @@
+/code/zx/workspace/projects/mono/wip/broot_testing
+ ├──a
+ │  ├──m
+ │  │  ├──x
+ │  │  │  ├──10.txt
+ │  │  │  ├──100.txt
+ │  │  │  ├──101.txt
+ │  │  │  ├──102.txt
+ │  │  │  ├──103.txt
+ │  │  │  ├──104.txt
+ │  │  │  ├──105.txt
+ │  │  │  ├──106.txt
+ │  │  │  ├──107.txt
+ │  │  │  ├──108.txt
+ │  │  │  ├──109.txt
+ │  │  │  ├──11.txt
+ │  │  │  ├──110.txt
+ │  │  │  ├──111.txt
+ │  │  │  ├──112.txt
+ │  │  │  ├──113.txt
+ │  │  │  ├──114.txt
+ │  │  │  ├──115.txt
+ │  │  │  ├──116.txt
+ │  │  │  ├──117.txt
+ │  │  │  ├──118.txt
+ │  │  │  ├──119.txt
+ │  │  │  ├──12.txt
+ │  │  │  ├──120.txt
+ │  │  │  ├──13.txt
+ │  │  │  ├──14.txt
+ │  │  │  ├──15.txt
+ │  │  │  ├──16.txt
+ │  │  │  └──93 unlisted
+ │  │  └──y
+ │  │     └──b.txt
+ │  └──n
+ │     ├──x
+ │     └──y
+ ├──master
+ │  ├──file_contents.master
+ │  ├──file_fuzzy.master
+ │  ├──folder_pane_closed.master
+ │  ├──folder_pane_open.master
+ │  ├──initial.master
+ │  ├──page_down.master
+ │  ├──page_up.master
+ │  └──print_path.master
+ └──script.sh
+ Hit enter to focus, alt-enter to cd, ? for … verb
+                                       h:n  gi:y
