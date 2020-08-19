@@ -1,6 +1,7 @@
 DEFAULT='\033[00m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 
 
 CAPTURE_DIR="/tmp/$$.BROOT.CAPTURES"
@@ -9,14 +10,16 @@ FAILURE=false
 
 function capture_compare
 {
-	echo -e "$GREEN Test case $1 $DEFAULT"
+	echo -e "$YELLOW Test case $1 $DEFAULT"
 	CAPTURE_FILE="$CAPTURE_DIR/$1.capture"
 
-	tmux capture-pane -p > $CAPTURE_FILE
+	tmux capture-pane -p -e > $CAPTURE_FILE
 	if ! diff $CAPTURE_FILE master/$1.master 
 	then
-		echo -e $RED "test case named $1 failed"
+		echo -e $RED "❌ $1"
 		FAILURE=true
+	else 
+		echo -e $GREEN "✅ $1"
 	fi
 	echo -e "$DEFAULT"
 }
