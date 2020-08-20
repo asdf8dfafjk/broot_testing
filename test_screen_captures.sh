@@ -36,6 +36,9 @@ function capture_compare
 tmux -u new-session -d -x 50 -y 50 -s broot_test
 
 # Initial View
+tmux send -t broot_test 'unset RPROMPT' ENTER
+tmux send -t broot_test 'export PS1=$' ENTER
+tmux send -t broot_test clear ENTER
 tmux send -t broot_test broot ENTER
 sleep 0.5
 capture_compare initial
@@ -92,7 +95,9 @@ sleep 0.5
 capture_compare print_path
 
 
+sleep 2
 tmux kill-session -t broot_test
+
 
 if $FAILURE
 then
