@@ -11,8 +11,8 @@ done
 
 echo "broot is a file manager." > a/m/x/112.txt
 
-echo "$YELLOW Captures in $CAPTURE_DIR"
 CAPTURE_DIR="/tmp/$$.BROOT.CAPTURES"
+echo -e "$YELLOW Captures in $CAPTURE_DIR"
 mkdir -p $CAPTURE_DIR
 FAILURE=false
 
@@ -94,9 +94,9 @@ capture_compare print_path
 
 tmux kill-session -t broot_test
 
-if [ $FAILURE ]
+if $FAILURE
 then
-	echo "$RED There were failures, see $CAPTURE_DIR"
+	echo -e "$RED There were failures, see $CAPTURE_DIR"
 fi
 
 rm -rf a

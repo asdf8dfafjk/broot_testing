@@ -1,12 +1,12 @@
 broot
-[/code/zx/workspace/projects/mono/wip/broot_testin
-g]
-➤ broot             [zx@Seagate500Mini1 8:06:58 ]
-/code/zx/workspace/projects/mono/wip/broot_testing
-/a/m/x/34.txt
-[/code/zx/workspace/projects/mono/wip/broot_testin
-g]
-➤                   [zx@Seagate500Mini1 8:07:05 ]
+[32m[~/broot_testing][39m
+[32m➤ [39mbroot            [zx@Seagate500Mini2 11:51:30 ]
+/home/zx/broot_testing/a/m/x/34.txt
+[32m[~/broot_testing][39m
+[32m➤ [39m                 [zx@Seagate500Mini2 11:51:37 ]
+
+
+
 
 
 
