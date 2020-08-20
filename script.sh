@@ -3,7 +3,15 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 
+mkdir -p a/m/x a/m/y
+for i in $(seq 1 120)
+do
+	touch a/m/x/$i.txt
+done
 
+echo "broot is a file manager." > a/m/x/112.txt
+
+echo "$YELLOW Captures in $CAPTURE_DIR"
 CAPTURE_DIR="/tmp/$$.BROOT.CAPTURES"
 mkdir -p $CAPTURE_DIR
 FAILURE=false
@@ -88,5 +96,7 @@ tmux kill-session -t broot_test
 
 if [ $FAILURE ]
 then
-	echo "There were failures, see $CAPTURE_DIR"
+	echo "$RED There were failures, see $CAPTURE_DIR"
 fi
+
+rm -rf a
