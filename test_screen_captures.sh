@@ -39,11 +39,48 @@ function capture_compare
 	echo -e "$DEFAULT"
 }
 
+function normalize_file_name()
+{
+	INPUT="$1"
+	OUTPUT=${INPUT/$PWD/}
+	echo $OUTPUT
+}
+
+function clipboard_compare_file_name()
+{
+	EXPECTED_CLIPBOARD_TEXT=$1
+	NORMALIZED=$(normalize_file_name $(xsel -b))
+
+	if [ "$NORMALIZED" = "$EXPECTED_CLIPBOARD_TEXT" ]
+	then
+		echo -e $GREEN "✅ Clipboard as expected: $1"
+	else 
+		echo -e $RED "❌ Clipboard, got: $(xsel -b) expected (after normalization): $1"
+		FAILURE=true
+	fi
+	echo -e "$DEFAULT"
+}
+
 function SendKeysToTmuxSession
 {
 	tmux send-keys -t $BROOT_TMUX_SESSION $@
 	sleep 0.5	
 }
+
+function TestCopy
+{
+	SendKeysToTmuxSession :copy_path ENTER
+	clipboard_compare_file_name "/a/m/x/34.txt"
+	
+	SendKeysToTmuxSession DOWN DOWN ENTER
+	clipboard_compare_file_name "/a/m/x/36.txt"
+
+	SendKeysToTmuxSession ESCAPE
+
+	SendKeysToTmuxSession UP UP M-c
+	clipboard_compare_file_name "/a/m/x/98.txt"
+}
+
 
 tmux -u new-session -d -x 50 -y 50 -s $BROOT_TMUX_SESSION
 trap "tmux kill-session -t $BROOT_TMUX_SESSION; exit" SIGINT SIGTERM
@@ -100,6 +137,10 @@ capture_compare page_down
 SendKeysToTmuxSession PageUp
 
 capture_compare page_up
+
+
+# Copy
+TestCopy
 
 # Print path
 SendKeysToTmuxSession :print_path ENTER
