@@ -3,20 +3,20 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 
+function SetupTestEnv
+{
+	mkdir -p a/m/x a/m/y
+	for i in $(seq 1 120)
+	do
+		touch a/m/x/$i.txt
+	done
+
+	echo "broot is a file manager." > a/m/x/112.txt
+}
+
 BROOT_TMUX_SESSION="broot_test_$$"
-
-trap "tmux kill-session -t $BROOT_TMUX_SESSION; exit" SIGINT SIGTERM
-
-# BROOT_BINARY=/home/zx/workspace/git/broot/target/release/broot
 BROOT_BINARY=broot
 
-mkdir -p a/m/x a/m/y
-for i in $(seq 1 120)
-do
-	touch a/m/x/$i.txt
-done
-
-echo "broot is a file manager." > a/m/x/112.txt
 
 CAPTURE_DIR="/tmp/$$.BROOT.CAPTURES"
 echo -e "$YELLOW Captures in $CAPTURE_DIR"
@@ -26,10 +26,10 @@ FAILURE=false
 function capture_compare
 {
 	echo -e "$YELLOW Test case $1 $DEFAULT"
-	CAPTURE_FILE="$CAPTURE_DIR/$1.capture"
+	CAPTURE_FILE="$CAPTURE_DIR/$1"
 
 	tmux capture-pane -p -e -t $BROOT_TMUX_SESSION > $CAPTURE_FILE
-	if ! diff $CAPTURE_FILE master/$1.master 
+	if ! diff --side-by-side --suppress-common-lines $CAPTURE_FILE master/$1 
 	then
 		echo -e $RED "❌ $1"
 		FAILURE=true
@@ -46,7 +46,13 @@ function SendKeysToTmuxSession
 }
 
 tmux -u new-session -d -x 50 -y 50 -s $BROOT_TMUX_SESSION
+trap "tmux kill-session -t $BROOT_TMUX_SESSION; exit" SIGINT SIGTERM
 
+
+echo "Setting up test environment"
+SetupTestEnv
+
+echo "Starting tests"
 
 # Initial View
 SendKeysToTmuxSession 'unset' SPACE 'RPROMPT' ENTER
