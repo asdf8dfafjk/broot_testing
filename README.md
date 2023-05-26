@@ -4,6 +4,8 @@ This repo holds captures of broot instances in text format for comparison.
 To run the test, execute `./test_screen_captures.sh`. 
 These tests have been only tested on one machine. 
 But the tests themselves are robust as long as the testing infrastructure stays the same. 
+(Testing infra staying same is no longer a requirement since the bug 
+referred here https://unix.stackexchange.com/a/698013 has been fixed in the latest version)
 If the instrastructure changes, one glance at the diffs might be enough
 
 
